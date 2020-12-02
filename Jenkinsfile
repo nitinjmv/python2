@@ -1,4 +1,7 @@
 pipeline {
+    options {
+        timeout(time: 5, unit: 'SECONDS') 
+    }
     agent any 
     stages {
         stage('init'){
@@ -12,10 +15,7 @@ pipeline {
                     image 'python:2-alpine' 
                 }
             }*/
-            steps {
-                options {
-                    timeout(time: 5, unit: 'SECONDS') 
-                }
+            steps {              
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'git@github.com:nitinjmv/python2.git']]])
                 sh 'make build'                 
             }
