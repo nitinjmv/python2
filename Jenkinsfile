@@ -13,6 +13,9 @@ pipeline {
                 }
             }*/
             steps {
+                options {
+                    timeout(time: 5, unit: 'SECONDS') 
+                }
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'git@github.com:nitinjmv/python2.git']]])
                 sh 'make build'                 
             }

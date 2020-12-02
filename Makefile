@@ -11,7 +11,7 @@ init:
 	@echo "loaded config.env"
 	@echo "PYTHON $(PYTHON)"
 	@echo "CURRENT_MAKEFILE $(CURRENT_MAKEFILE)"
-	@echo "GIT_CREDENTIALS $(GIT_CREDENTIALS)"
+	@echo "SELF_DIR $(SELF_DIR)"
 	@echo "ENV $(ENV)"
 	@echo "MAKEFILE_LIST $(MAKEFILE_LIST)"
 	@echo "COVERAGE_MIN_PERCENT $(COVERAGE_MIN_PERCENT)"
